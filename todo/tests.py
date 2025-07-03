@@ -114,4 +114,3 @@ class TodoViewsTestCase(TestCase):
         response = client.get('/1/')
 
         self.assertEqual(response.status_code, 404)
-
