@@ -1,7 +1,9 @@
-.board{
-    display:flex;
-    align-items: center;
-    flex-direction: column;;
+.board {
+    width: 90%;      /* 画面幅に対して90%の幅にする */
+    max-width: 800px;  /* ただし最大幅は800pxに制限 */
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
 h1{
@@ -14,15 +16,16 @@ h1{
 }
 
 .content_box{
-    width: 60%;
+    width: 90%;
     border:1px solid black;
-    margin-top:10px;
-    padding-left:10px;
+    margin: 20px auto;
+    padding:25px;
 }
 
 #explain{
     font-weight: 600;
     font-size:150%;
+    text-align: center;
 }
 
 .text{
@@ -38,3 +41,85 @@ h1{
     list-style: none;
 }
 
+
+.subnit-btn:hover {
+    opacity: 0.2;
+}
+
+body {
+    display: flex;
+    justify-content: center; /* 水平方向の中央揃え */
+    align-items: center;   /* 垂直方向の中央揃え */
+    min-height: 100vh;     /* bodyの高さを画面全体に広げる */
+    margin: 0;             /* bodyのデフォルトマージンを削除 */
+    background-color: #e9ecef; /* 背景色を少しつけると見やすい */
+    font-family: sans-serif;   /* 基本的なフォントを指定 */
+}
+
+/* --- (新規) タスクタイトル専用のスタイル --- */
+.task-title-link {
+    text-decoration: none; /* 下線を消す */
+    color: #007bff; /* 文字色を黒っぽくする */
+}
+.task-title-link:hover {
+    color: #555;
+    text-decoration: underline; /* ホバー時に下線を引く */
+}
+
+
+/* --- 「並び替え」リンクのエリアを中央寄せにする --- */
+.top-btn-area {
+    display: flex;           /* 要素を横方向に並べる */
+    justify-content: center; /* 水平方向の中央に配置する */
+    align-items: center;     /* 垂直方向の真ん中に揃える（"|"との高さ調整） */
+    gap: 15px;               /* ボタン間の隙間 */
+    margin-bottom: 20px;
+}
+
+/* --- (修正) 「並び替え」リンクのスタイル --- */
+/* .top-btnは並び替えリンク専用にする */
+.top-btn {
+    text-decoration: none;
+    color: #007bff; /* 青色系のリンク色 */
+    margin: 0 10px; /* リンクの左右に余白 */
+}
+.top-btn:hover {
+    text-decoration: underline;
+}
+
+
+/* --- (現状維持) 送信ボタンのスタイル --- */
+.submit-btn {
+    width: 209px;
+    padding: 14px 0 16px 0;
+    font-size: 16px;
+    position: relative;
+    text-align: center;
+    text-decoration: none;
+    display: block;
+    margin: 0 auto 20px auto; /* 下に余白を追加 */
+    color: #fff;
+    background: #444;
+    line-height: 1;
+    border-radius: 50px;
+    transition: all .2s;
+    border: none; /* ボタンのデフォルト枠線を消す */
+    cursor: pointer; /* カーソルを指の形にする */
+}
+
+.submit-btn:hover {
+    opacity: 0.8;
+}
+
+form {
+    display: flex;
+    flex-direction: column; /* 要素を縦方向に並べる */
+    align-items: center;   /* 水平方向の中央に配置する */
+    gap: 15px;             /* 各入力欄の間の隙間 */
+    margin-bottom: 30px;   /* フォームの下に余白 */
+}
+
+form div {
+    text-align: center;
+    margin-bottom: 15px; /* 各要素の間に少し余白を追加 */
+}

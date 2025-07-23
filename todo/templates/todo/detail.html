@@ -10,28 +10,30 @@
   </head>
 
   <body>
-    <h1>{{ task.title }}</h1>
-    {% if task.text %}
-  <p>{{ task.text }}</p>
-  {% endif %}
-
-    <ul>
-      <li>Posted at: {{ task.posted_at }}</li>
-      {% if task.due_at %}
-      <li>Due at: {{ task.due_at }}</li>
+    <div class="container">
+      <h1>{{ task.title }}</h1>
+      <p>{% if task.text %}</p>
+      <p>{{ task.text }}</p>
       {% endif %}
-      {% if task.completed %}
-      <li>Status: Completed</li>
-      {% else %}
-      <li>Status: Not Completed</li>
-      {% endif %}
-    </ul>
 
-    <div>
-      <a href="{% url 'index' %}">Top</a>
-      <a href="{% url 'close' task.id %}">Close</a>
-      <a href="{% url 'delete' task.id %}">Delete</a>
-      <a href="{% url 'update' task.id %}">Edit</a>
+      <ul class="ps">
+        <li>Posted at: {{ task.posted_at }}</li>
+        {% if task.due_at %}
+        <li>Due at: {{ task.due_at }}</li>
+        {% endif %}
+        {% if task.completed %}
+        <li>Status: 完了</li>
+        {% else %}
+        <li>Status: 未完了</li>
+        {% endif %}
+      </ul>
+
+      <div class="detail-btn-whole">
+        <a class="detail-btn" href="{% url 'index' %}">Top</a>
+        <a class="detail-btn" href="{% url 'close' task.id %}">Close</a>
+        <a class="detail-btn" href="{% url 'delete' task.id %}">Delete</a>
+        <a class="detail-btn" href="{% url 'update' task.id %}">Edit</a>
+      </div>
     </div>
   </body>
 
