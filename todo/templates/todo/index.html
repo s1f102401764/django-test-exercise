@@ -29,31 +29,31 @@
                     <textarea id="textInput" name="text" placeholder="Enter task details here"></textarea>
                     </div>
                     <div>
-                        <button type="submit">Submit</button>
+                        <button class="submit-btn" type="submit">Submit</button>
                     </div>
                 </form>
                 <br>
 
-                <div>
-                    <a href="{% url 'index' %}?order=due">Sort by Due Date</a> |
-                    <a href="{% url 'index' %}?order=post">Sort by Posted Date</a>
+                <div class="top-btn-area">
+                    <a class="top-btn" href="{% url 'index' %}?order=due">Sort by Due Date</a> |
+                    <a class="top-btn" href="{% url 'index' %}?order=post">Sort by Posted Date</a>
                 </div>
 
                 {% for task in tasks %}
                 <div class="text">
-                    <h2><a href="{% url 'detail' task.id %}">{{ task.title }}</a></h2>
+                    <h2><a class="task-title-link" href="{% url 'detail' task.id %}">{{ task.title }}</a></h2>
                     <ul>
+                        {% if task.text %}
+                        <li>Text: {{ task.text }}</li>
+                        {% endif %}
                         <li>Posted at: {{ task.posted_at }}</li>
                         {% if task.due_at %} 
                         <li>Due at: {{ task.due_at }}</li>
                         {% endif %}
                         {% if task.completed %} 
-                        <li>Status: Completed</li>
+                        <li>Status: 完了</li>
                         {% else %}
-                        <li>Status: Not Completed</li>
-                        {% endif %}
-                        {% if task.text %}
-                        <li>Text: {{ task.text }}</li>
+                        <li>Status: 未完了</li>
                         {% endif %}
                     </ul>
                 </div>

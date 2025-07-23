@@ -8,7 +8,7 @@ body {
      padding: 20px;
      display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: center;
     min-height: 100vh;
 }
 
@@ -39,28 +39,42 @@ li {
     font-size: 16px;
 }
 
-/* --- アクションボタンのコンテナ --- */
-div.actions {
-    display: flex;
-    justify-content: flex-start;
-    gap: 15px; /* ボタン間のスペース */
-    flex-wrap: wrap; /* 画面が小さい場合に折り返す */
-}
 
-/* --- 共通のボタンスタイル --- */
-div.actions a {
-    text-decoration: none;
-    color: #fff;
-    padding: 10px 20px;
-    border-radius: 5px;
-    font-weight: bold;
+.detail-btn {
+    /* display: block; と width: 250px; を削除 */
+    
     text-align: center;
-    transition: background-color 0.3s ease, transform 0.2s ease;
-    display: inline-block;
+    text-decoration: none;
+    line-height: 1.5; /* line-heightはpaddingで調整する方が柔軟です */
+    outline: none;
+    transition: all .3s;
+    padding: 10px 20px; /* 上下10px、左右20pxの余白 */
+    
+    color: black;
+    background-color: goldenrod;
+    border-radius: 5px; /* 角を丸くすると他の要素と統一感が出ます */
 }
 
-div.actions a:hover {
-    transform: translateY(-2px); /* 少し浮き上がる効果 */
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+.detail-btn:hover {
+    background-color: #dee2e6;
 }
 
+/* --- アクションボタンのコンテナ --- */
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.ps {
+    align-items: center;
+}
+
+.container {
+    width: 400px; /* コンテナの幅を固定 */
+    background-color: #ffffff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
