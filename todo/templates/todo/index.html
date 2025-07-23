@@ -25,6 +25,10 @@
                         <input id="dueInput" name="due_at" type="datetime-local">
                     </div>
                     <div>
+                    <label for="textInput">Text</label><br>
+                    <textarea id="textInput" name="text" placeholder="Enter task details here"></textarea>
+                    </div>
+                    <div>
                         <button type="submit">Submit</button>
                     </div>
                 </form>
@@ -47,6 +51,9 @@
                         <li>Status: Completed</li>
                         {% else %}
                         <li>Status: Not Completed</li>
+                        {% endif %}
+                        {% if task.text %}
+                        <li>Text: {{ task.text }}</li>
                         {% endif %}
                     </ul>
                 </div>
